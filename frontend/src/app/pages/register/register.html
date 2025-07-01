@@ -1,0 +1,47 @@
+<div class="register-container">
+  <mat-card>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" type="text" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Confirm Password</mat-label>
+        <input
+          matInput
+          formControlName="password_confirmation"
+          type="password"
+        />
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="registerForm.invalid || loading"
+        class="full-width"
+      >
+        Register
+      </button>
+
+      <div class="spinner-container" *ngIf="loading">
+        <mat-progress-spinner
+          diameter="24"
+          mode="indeterminate"
+          color="accent"
+        ></mat-progress-spinner>
+      </div>
+    </form>
+  </mat-card>
+</div>

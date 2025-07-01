@@ -1,0 +1,19 @@
+<div class="task-list-container">
+  <div class="spinner-row" *ngIf="loading">
+    <mat-progress-spinner
+      mode="indeterminate"
+      color="accent"
+    ></mat-progress-spinner>
+  </div>
+
+  <ng-container *ngIf="!loading">
+    <app-task-item
+      *ngFor="let task of tasks"
+      [task]="task"
+      (markComplete)="onComplete.emit($event)"
+      (delete)="onDelete.emit($event)"
+      (edit)="handleEdit($event)"
+    >
+    </app-task-item>
+  </ng-container>
+</div>

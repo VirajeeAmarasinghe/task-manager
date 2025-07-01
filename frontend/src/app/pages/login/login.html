@@ -1,0 +1,38 @@
+<div class="login-container">
+  <mat-card>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password" />
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="loginForm.invalid || loading"
+        class="full-width"
+      >
+        Login
+      </button>
+
+      <div class="register-link">
+        <span>Don't have an account?</span>
+        <a routerLink="/register">Register</a>
+      </div>
+
+      <div class="spinner-container" *ngIf="loading">
+        <mat-progress-spinner
+          diameter="24"
+          mode="indeterminate"
+          color="accent"
+        ></mat-progress-spinner>
+      </div>
+    </form>
+  </mat-card>
+</div>
