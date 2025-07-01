@@ -13,7 +13,7 @@ This is the Laravel backend for the Task Manager application.
 1. **Clone the repository**
 
     ```bash
-    git clone https://github.com/your-username/task-manager.git
+    git clone https://github.com/VirajeeAmarasinghe/task-manager.git
     cd task-manager/backend
     ```
 
@@ -78,11 +78,21 @@ This is the Laravel backend for the Task Manager application.
 
 9. **Start the development server**
 
-    ```bash
-    php artisan serve
-    ```
+    You have two options:
 
-    The API will be available at `http://localhost:8000`.
+    - **Option 1: Use Laravel's built-in server (for development/testing):**
+
+        ```bash
+        php artisan serve
+        ```
+
+        The API will be available at `http://localhost:8000`.
+
+    - **Option 2: Use XAMPP/Apache:**
+        - Copy or move the `backend` folder into your `htdocs` directory.
+        - Access the API at `http://localhost/task-manager/backend/public` (adjust the path if your folder name is different).
+
+    > **Note:** For production or shared hosting, always point your web server's document root to the `public` directory
 
 ## Useful Commands
 
@@ -99,13 +109,3 @@ This is the Laravel backend for the Task Manager application.
     php artisan route:clear
     php artisan view:clear
     ```
-
-## API Documentation
-
--   The API follows RESTful conventions.
--   Authentication uses JWT (JSON Web Token).
--   Endpoints include `/api/login`, `/api/register`, `/api/tasks`, etc.
-
-## License
-
-This project is open-source and available under the [MIT license](../LICENSE)
